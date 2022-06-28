@@ -1,0 +1,218 @@
+{% extends 'baseadmin.html' %}
+
+{% block title %} - 项目详情{% endblock title %}
+{% block bodyclass %}sidebar-collapse{% endblock %}
+
+
+{% block content %}
+
+
+
+ <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>语音项目详情</h1>
+        </div>
+          <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item">
+                <a  href="/post_list/">
+                <button type="button" class="btn btn-block btn-outline-secondary btn-lg">返回</button>
+                </a>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="content">
+    <div class="row">
+      
+      <!-- /.col -->
+
+      <div class="col-md-9 my-col-md-9">
+        <div class="card card-primary card-outline">
+          <div class="card-header">
+            <h3 class="card-title">数据</h3>
+            <div class="card-tools">
+              <div class="input-group input-group-sm">
+                <input type="text" class="form-control" placeholder="搜索">
+                <div class="input-group-append">
+                  <div class="btn btn-primary">
+                    <i class="fas fa-search"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body p-0">
+
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <img class="img-fluid" src="/static/img/333.png" alt="Photo">
+            </div>
+
+            <button type="button" class="btn btn-block bg-gradient-secondary btn-lg">点击将音频转化文本</button>
+
+
+            <div class="table-responsive mailbox-messages">
+                <div class="mailbox-read-message">
+                    <br>
+                    
+                    <p>您好，请问是杭州市西湖区公安局吗？</p>
+                    <p>是的，请问有什么可以帮助您？</p>
+                    <p>我前几天由于不慎被诈骗，咨询您是来报案的。</p>
+                    <p>好的，麻烦提供您具体信息</p>
+                    <p>我叫<span style="background-color:rgb(236, 58, 58) ;">王强</span>，性别男，民族汉，<span style="background-color:#ffc107 ;">1972年2月22日</span>生，，身份证号码：<span style="background-color:rgb(236, 58, 58) ;">312626197202223115</span> ,
+                        住址：<span style="background-color:#ffc107 ;">浙江省杭州市西湖区余杭塘路866号</span>，工作单位：浙江大学嘉兴研究院，
+                        现就<span style="background-color:rgb(236, 58, 58) ;">黄宝翔</span>通过诈骗手段诈骗我8.5万人民币向你处报案，请依法对黄宝翔利用诈骗手段给我造成经济损失的行为进行立案侦查。</p>
+    
+                    <p>好的，那诈骗人的具体信息您了解吗？</p>
+
+                    <p><span style="background-color:rgb(236, 58, 58) ;">黄宝翔</span>，男，联系方式：<span style="background-color:rgb(236, 58, 58) ;">15516165252</span>，家住杭州市余杭区解放路空中花园小区3号楼2单元1106室，身份证号<span style="background-color:rgb(236, 58, 58) ;">370983196506089112</span></p>
+    
+                    <p>好的我已经做了笔录，您再详述一下整个案件的过程，以便我们侦察案件。</p>
+
+                    <p>2021年5月12日，<span style="background-color:rgb(236, 58, 58) ;">黄宝翔</span>以卖房为由收取我人民币一万元作为定金，同意将位于<span style="background-color:#ffc107 ;">杭州市余杭区解放路空中花园小区3号楼2单元1106室</span>出售给我，当时商议总房款为<span style="background-color:#93ba54 ;">17</span>万元整，首付款为<span style="background-color:#93ba54 ;">8.5</span>万元，
+                        剩下<span style="background-color:#93ba54 ;">8.5</span>万元等产权过户后用房产抵押贷款还清。<span style="background-color:rgb(236, 58, 58) ;">黄宝翔</span>在隐瞒妻子死亡的事实下，签订购房合同时，书面承诺会和妻子一起将房子过户给我（另附购房合同复印件一份作为依据）。
+                        同年8月20日，我将首付款剩余的<span style="background-color:#93ba54 ;">8.5</span>万（一万元定金转为首付款）支付给<span style="background-color:rgb(236, 58, 58) ;">黄宝翔</span>并商议同年9月24日进行过户，但9月24日，<span style="background-color:rgb(236, 58, 58) ;">黄宝翔</span>逃跑。
+                        事后得知，<span style="background-color:rgb(236, 58, 58) ;">黄宝翔</span>在8月20日在我将首付款给他以后，将房子通过房产证变更，做公正等手段转移至<span style="background-color:rgb(236, 58, 58) ;">黄国富</span>名下使其不能过户并拒绝过户，并拒绝退还首付款。
+                    <span style="background-color:rgb(236, 58, 58) ;">黄宝翔</span>的行为，是以非法占有为目的，通过诈骗手段侵占我<span style="background-color:#93ba54 ;">8.5</span>万人民币的行为，已构成诈骗罪。
+
+
+                    <p>麻烦您描述一下他的诈骗手段</p>
+                    <p><span style="background-color:rgb(236, 58, 58) ;">黄宝翔</span>隐瞒妻子死亡情况并承诺会和妻子一起将房子过户给我并收取我<span style="background-color:#93ba54 ;">8.5</span>万人民币，事后拒绝过户拒绝还款，并变更房产证产权人姓名，使其法院不能封房，已有转移财产的嫌疑。</p>
+                    <p>好的我们会尽快侦察此案件，还请您明天来派出所一趟</p>
+                    <p>好的谢谢</p>
+                    
+                   
+                  </div>
+            </div>
+          </div>
+
+ 
+          <!-- <div class="card-footer p-0"> 
+            <div class="mailbox-controls">
+              
+              <div class="float-right">
+                
+                <div class="btn-group">
+                  {% include "pagination.html" with page=excel_data %}
+                </div>
+              </div>
+            </div>
+         </div> -->
+
+        </div>
+      </div>
+
+
+
+
+      <div class="col-md-3 my-col-md-3">
+        <!-- <a href="compose.html" class="btn btn-primary btn-block mb-3">点击开始合规</a> -->
+
+        <div class="card">
+          <div class="card-header"> 
+            <h3 class="card-title">
+              <i class="far fa-chart-bar"></i>
+              合规得分</h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body p-0" style="display: block;">
+
+
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <img class="img-fluid" src="/static/img/111.png" alt="Photo">
+            </div>
+            
+            
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+
+        
+
+
+
+        <div class="card">
+          
+            
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fas fa-bullhorn"></i>
+                  合规建议
+                </h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <div class="callout callout-danger">
+                  <div style="justify-content: space-between;display: flex;">
+                    <h5 id="high-level">高风险</h5>
+                    <button style="border:none" id="handel-high-level">
+<!--                      <i class="far fa-circle text-danger"></i>-->
+                      Fix
+                    </button >
+                  </div>
+
+                  <p>含有未经技术处理的直接标识符，包括但不限于手机号、身份证号、银行卡号等，建议处理！</p>
+                </div>
+                
+                <div class="callout callout-warning">
+                  <div style="justify-content: space-between;display: flex;">
+                    <h5 id="middle-level">中风险</h5>
+                    <button style="border:none" id="handel-middle-level">
+<!--                      <i class="far fa-circle text-danger"></i>-->
+                      Fix
+                    </button >
+                  </div>
+
+                  <p>不含有直接标识符但含有准标识符，包括但不限于住址、IP地址、生日等，建议处理！</p>
+                </div>
+
+
+                  <div class="callout callout-success">
+                    <div style="justify-content: space-between;display: flex;">
+                     <h5 id="low-level">低风险</h5>
+                      <button style="border:none" id="handel-low-level">
+<!--                      <i class="far fa-circle text-danger"></i>-->
+                      Fix
+                      </button >
+                    </div>
+
+
+                  <p>含有经过技术处理的直接标识符，但重识别率低，如统计信息等，建议处理</p>
+                </div>
+              </div>
+              <!-- /.card-body -->
+            
+            <!-- /.card -->
+          
+        </div>
+
+        <a href="{{post.get_absolute_url}}generate_report/" class="btn btn-primary btn-block mb-3">生成合规报告</a>
+      </div>
+
+
+
+
+    </div>
+  </section>
+
+
+
+{% endblock content %}  

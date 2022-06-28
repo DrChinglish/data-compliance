@@ -1,0 +1,160 @@
+{% extends 'baseadmin.html' %}
+
+{% block title %} - 生成报告{% endblock title %}
+{% block bodyclass %}sidebar-collapse{% endblock %}
+
+{% block content %}
+
+
+
+ <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>项目报告</h1>
+        </div>
+          <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item">
+                <a  href="{{post.get_absolute_url}}">
+                <button type="button" class="btn btn-block btn-outline-secondary btn-lg">返回</button>
+                </a>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+
+          <div class="callout callout-info">
+            <h5><i class="fas fa-info"></i> 温馨提示:</h5>
+            此页面为您的数据合规报告，包含您原始数据的合规得分，以及您的详细合规操作，点击pdf按钮即可生成您的合规分析报告。
+          </div>
+
+
+          <!-- Main content -->
+          <div class="invoice p-3 mb-3" id="contentToPrint">
+            <!-- title row -->
+            <div class="row">
+              <div class="col-12">
+                <h4>
+                  <i class="fas fa-globe"></i> 操作记录
+                  <small class="float-right">Date: {{ generate_report_time }}</small>
+                </h4>
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- info row -->
+            <div class="row invoice-info">
+              <div class="col-sm-4 invoice-col">
+                <br>
+                <address>
+                  <strong>{{post.title}}</strong><br>
+                  创建时间：{{post.publish}}<br>
+                  创建人： {{post.author}}<br>
+
+                </address>
+              </div>
+              <!-- /.col -->
+              <div class="col-sm-4 invoice-col">
+                <br>
+                <strong>项目描述</strong><br>
+                <address>
+                  <br>
+                  {{post.body}}
+                </address>
+              </div>
+
+            </div>
+            <!-- /.row -->
+
+            <!-- Table row -->
+            <div class="row">
+              <div class="col-12 table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                  <tr>
+                    <th>序号</th>
+                    <th>处理时间</th>
+                    <th>处理数据量</th>
+                    <th>处理内容描述</th>
+                    <!-- <th>Subtotal</th> -->
+                  </tr>
+                  </thead>
+                  <tbody>
+
+                  {% for i in operation %}
+                  <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{ i.created }}</td>
+                    <td>{{ i.quantity }}</td>
+                    <td>{{ i.content }}</td>
+                  </tr>
+                  {% endfor %}
+
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+
+            <div class="row">
+              <!-- accepted payments column -->
+              <div class="col-6">
+                    
+
+
+
+              </div>
+              <!-- /.col -->
+              <div class="col-6">
+                <p class="lead">风险数据占比</p>
+
+                <div class="table-responsive">
+                  <table class="table">
+                    <tbody><tr>
+                      <th >高风险占比:</th>
+                      <td>{{ operation.0.low_proportion }}</td>
+                    </tr>
+                    <tr>
+                      <th>中风险占比：</th>
+                      <td>{{ operation.1.middle_proportion }}</td>
+                    </tr>
+                    <tr>
+                      <th>低风险占比:</th>
+                      <td>{{ operation.2.high_proportion }}</td>
+                    </tr>
+
+                  </tbody></table>
+                </div>
+              </div>
+            </div>
+          
+          </div>
+
+
+          <div class="row no-print">
+            <div class="col-12">
+
+
+              <button onclick="Convert_HTML_To_PDF();"  class="btn btn-primary float-right">
+                <i class="fas fa-download"></i> 生成PDF
+              </button>
+                      
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  {% endblock content %}  
